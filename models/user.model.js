@@ -3,9 +3,8 @@ const db = require('../utils/db')
 
 const user = db.define("users", {
     id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         primaryKey: true,
-        autoIncrement: true
     },
     firstname: {
         type: DataTypes.STRING,
@@ -14,7 +13,13 @@ const user = db.define("users", {
     lastname: {
         type: DataTypes.STRING,
         allowNull: false
+    }, username: {
+        type: DataTypes.STRING,
+        allowNull: false
+    }, password: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 })
 
-module.exports=user
+module.exports = user
